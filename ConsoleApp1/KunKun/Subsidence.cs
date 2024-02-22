@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace Shard
 {
-    class Ground : GameObject, CollisionHandler
+    internal class Subsidence: GameObject, CollisionHandler
     {
-        public Ground() {
+        public Subsidence()
+        {
 
-            this.Transform.SpritePath = Bootstrap.getAssetManager().getAssetPath("missilecommandback.png");
+            this.Transform.SpritePath = Bootstrap.getAssetManager().getAssetPath("subsidence.png");
 
             setPhysicsEnabled();
-            
+
+
             MyBody.Mass = 10000;
             MyBody.MaxForce = 0;
             MyBody.Drag = 0f;
@@ -23,8 +25,9 @@ namespace Shard
 
             MyBody.addRectCollider();
 
-            addTag("Ground");
+            addTag("Subsidence");
         }
+
 
 
         public override void update()
@@ -46,5 +49,7 @@ namespace Shard
         {
 
         }
+
     }
+
 }

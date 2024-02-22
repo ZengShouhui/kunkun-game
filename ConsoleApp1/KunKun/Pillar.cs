@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Shard
 {
-    class Ground : GameObject, CollisionHandler
+    internal class Pillar:GameObject, CollisionHandler
     {
-        public Ground() {
+        
 
-            this.Transform.SpritePath = Bootstrap.getAssetManager().getAssetPath("missilecommandback.png");
+        public Pillar() {
+            this.Transform.SpritePath = Bootstrap.getAssetManager().getAssetPath("Pillar.jpg");
 
             setPhysicsEnabled();
             
@@ -20,12 +21,12 @@ namespace Shard
             MyBody.UsesGravity = false;
             MyBody.StopOnCollision = true;
 
-
             MyBody.addRectCollider();
 
-            addTag("Ground");
-        }
+            addTag("Pillar");
 
+
+        }
 
         public override void update()
         {
@@ -34,7 +35,7 @@ namespace Shard
 
         public void onCollisionEnter(PhysicsBody x)
         {
-
+            
         }
 
         public void onCollisionExit(PhysicsBody x)
